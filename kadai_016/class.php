@@ -5,8 +5,10 @@ class Food {
     private $price;
 
     public function show_price(int $price) {
-       $this->price = $price;
+        $this->price = $price;
+        return $price; 
     }
+    
     public function __construct(string $name, int $price) {
         $this->name = $name;
         $this->price = $price;
@@ -24,21 +26,21 @@ class Animal {
 
     public function show_height(int $height) {
         $this->height = $height;
+        return $height;
     }
-
+    
     public function __construct(string $name, int $height, int $weight){
-    $this->name = $name;
-    $this->height = $height;
-    $this->weight = $weight;
+        $this->name = $name;
+        $this->height = $height;
+        $this->weight = $weight;
     }
 }
 
 $animal = new Animal('dog', 60, 5000);
 print_r($animal);
 
-$food->show_price(250);
-$animal->show_height(60);
-
+print_r("<br>" . $food->show_price(250));
+print_r("<br>" . $animal->show_height(60));
 
 
 ?>
